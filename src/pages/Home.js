@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, Container, Image } from "react-bootstrap";
 
 import Tricard from "../components/tricard/tricard";
+import Info from "../components/info/Info";
 
 //images
 import HomeImg from "../Images/home.jpg";
@@ -13,43 +14,44 @@ export class Home extends Component {
   render() {
     return (
       <Container fluid className="wrapper">
-        <Row>
+        <Row className="clippath">
           <Col>
             <Image src={HomeImg} fluid className="px-0 home_img" />
           </Col>
         </Row>
-        <Row className="mx-auto my-3">
-          <Col md={4} xs={12} className="py-3">
-            <Tricard
-              img={Barbell}
+        <div className="my-3 ">
+          <div className="padding-y-lg  margin-top-lg">
+            <Info
+              image={Barbell}
               title="Customized Workouts"
-              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam
             eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis."
               btn="Learn More"
             />
-          </Col>
-          <Col md={4} xs={12} className="py-3">
-            <Tricard
-              img={Food}
+          </div>
+          <div className="padding-y-lg clippath1 background-1 margin-top-lg">
+            <Info
+              left
+              image={Food}
               title="Personalized Diet Guidelines"
-              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam
             eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis."
               btn="Learn More"
             />
-          </Col>
-          <Col md={4} xs={12} className="py-3">
-            <Tricard
-              img={Desktop}
+          </div>
+          <div className="padding-y-lg margin-top-lg">
+            <Info
+              image={Desktop}
               title="One on One Coaching"
-              body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam
             eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis."
               btn="Learn More"
             />
-          </Col>
-        </Row>
+          </div>
+        </div>
       </Container>
     );
   }
