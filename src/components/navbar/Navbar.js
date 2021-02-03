@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 import LogIn from "./LogIn";
 import LogOut from "./LogOut";
 
-import CartIcon from "../../Images/cart-outline.svg";
+import CartIcon from "../../components/cartIcon/CartIcon";
+import CartDropdown from "../cartDropdown/CartDropdown";
 
-const navbar = ({ currentUser }) => {
+const navbar = ({ currentUser, hidden }) => {
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -26,18 +27,20 @@ const navbar = ({ currentUser }) => {
           <div className="btn_link">
             <Link to="/cart">
               <Button variant="danger">
-                <Image src={CartIcon} />
+                <CartIcon />
               </Button>
             </Link>
           </div>
         </Navbar.Collapse>
       </Navbar>
+      {hidden ? null : <CartDropdown />}
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
+const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
+  currentUser,
+  hidden,
 });
 
 export default connect(mapStateToProps)(navbar);
