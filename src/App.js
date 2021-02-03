@@ -1,15 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
+
+//Redux
+import { connect } from "react-redux";
+import { setCurrentUser } from "./redux/user/userActions";
 
 //bootstrap
 import "./scss/custom.scss";
 
 //css
 import "./App.scss";
-
-//redux
-import { Provider } from "react-redux";
-import store from "./redux/store";
 
 //components
 import Home from "./pages/Home";
@@ -24,17 +24,11 @@ import Plan from "./pages/Plan";
 import Cart from "./pages/Cart";
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      currentUser: null,
-    };
-  }
-
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const { setCurrentUser } = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -51,7 +45,7 @@ class App extends React.Component {
         });
       }
 
-      this.setState({ currentUser: userAuth });
+      setCurrentUser(userAuth);
     });
   }
 
@@ -61,7 +55,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider store={store}>
+      <Fragment>
         <Navbar />
 
         <Switch>
@@ -73,9 +67,17 @@ class App extends React.Component {
         </Switch>
 
         <Footer />
-      </Provider>
+      </Fragment>
     );
   }
 }
 
-export default App;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
