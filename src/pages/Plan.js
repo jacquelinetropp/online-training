@@ -12,11 +12,27 @@ import Barbell from "../Images/barbell-outline.svg";
 import Food from "../Images/fast-food-outline.svg";
 import Desktop from "../Images/desktop-outline.svg";
 
-const Plan = ({ getPlans, plans }) => {
+const Plan = ({ getPlans, plans, loading }) => {
   useEffect(() => {
     getPlans();
   }, []);
   console.log(plans);
+  let content;
+  if (!plans || loading) {
+    content = <p>Loading</p>;
+  } else {
+    content = plans.map((plan) => (
+      <Col md={4} xs={12} className="py-3">
+        <Tricard
+          key={plan.id}
+          title={`Sessions ${plan.sessions}`}
+          body={`$ ${plan.price}`}
+          img={Barbell}
+          btn="Add To Cart"
+        />
+      </Col>
+    ));
+  }
   return (
     <Container fluid className="wrapper">
       <Row>
@@ -24,47 +40,13 @@ const Plan = ({ getPlans, plans }) => {
           <Image src={PlanImg} fluid className="px-0 home_img" />
         </Col>
       </Row>
-      <Row className="mx-auto my-3">
-        <Col md={4} xs={12} className="py-3">
-          <Tricard
-            img={Barbell}
-            title="Customized Workouts"
-            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam
-            eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis."
-            btn="Add To Cart"
-            id="1"
-          />
-        </Col>
-        <Col md={4} xs={12} className="py-3">
-          <Tricard
-            img={Food}
-            title="Personalized Diet Guidelines"
-            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam
-            eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis."
-            btn="Add To Cart"
-            id="2"
-          />
-        </Col>
-        <Col md={4} xs={12} className="py-3">
-          <Tricard
-            img={Desktop}
-            title="One on One Coaching"
-            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam
-            eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis."
-            btn="Add To Cart"
-            id="3"
-          />
-        </Col>
-      </Row>
+      <Row className="mx-auto my-3">{content}</Row>
     </Container>
   );
 };
 
 const mapStateToProps = ({ shop }) => ({
-  plans: shop.plans,
+  plans: shop.items,
   loading: shop.loading,
 });
 
