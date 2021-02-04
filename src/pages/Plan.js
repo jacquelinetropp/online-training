@@ -16,19 +16,19 @@ const Plan = ({ getPlans, plans, loading }) => {
   useEffect(() => {
     getPlans();
   }, []);
-  console.log(plans);
+
   let content;
   if (!plans || loading) {
     content = <p>Loading</p>;
   } else {
     content = plans.map((plan) => (
-      <Col md={4} xs={12} className="py-3">
+      <Col md={4} xs={12} className="py-3" key={plan.id}>
         <Tricard
-          key={plan.id}
           title={`Sessions ${plan.sessions}`}
           body={`$ ${plan.price}`}
-          img={Barbell}
+          img={plan.img}
           btn="Add To Cart"
+          plan={plan}
         />
       </Col>
     ));

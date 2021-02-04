@@ -25,11 +25,9 @@ const navbar = ({ currentUser, hidden }) => {
           </Nav>
           {currentUser ? <LogOut /> : <LogIn />}
           <div className="btn_link">
-            <Link to="/cart">
-              <Button variant="danger">
-                <CartIcon />
-              </Button>
-            </Link>
+            <Button variant="danger">
+              <CartIcon />
+            </Button>
           </div>
         </Navbar.Collapse>
       </Navbar>

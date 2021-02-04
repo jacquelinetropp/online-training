@@ -13,6 +13,7 @@ export const getPlans = () => async (dispatch, getState, { getFirestore }) => {
           id: doc.id,
           price: doc.data().price,
           sessions: doc.data().sessions,
+          img: doc.data().img,
         });
       });
       console.log(plans);
