@@ -21,7 +21,7 @@ import Signup from "./pages/signup";
 //firebase
 import { auth, createUserProfileDocument } from "./firebase/firebase";
 import Plan from "./pages/Plan";
-import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -61,7 +61,7 @@ class App extends React.Component {
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/plan" component={Plan} />
-          <Route path="/cart" component={Cart} />
+          <Route path="/checkout" component={Checkout} />
         </Switch>
 
         <Footer />
