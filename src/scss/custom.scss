@@ -105,6 +105,25 @@ $theme-colors: (
   }
 }
 
+//Checkout
+.checkout {
+
+  &__quantity{
+    display: flex;
+  }
+
+  &__arrow {
+    cursor: pointer;
+
+    .value {
+      margin: 0 10px;
+    }
+  }
+
+  &__img {
+  width: 100%; }
+}
+
 //Footer
 .footer {
   background-color: #808080;

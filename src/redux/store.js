@@ -5,6 +5,8 @@ import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import { reduxFirestore, getFirestore } from "redux-firestore";
 import firebase from "../firebase/firebase";
 
+import { persistStore } from "redux-persist";
+
 import rootReducer from "./root-reducer";
 
 const composeEnhancers =
@@ -30,5 +32,7 @@ const store = createStore(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore }))
   )
 );
+
+export const persistor = persistStore(store);
 
 export default store;
