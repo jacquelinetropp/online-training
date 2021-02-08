@@ -12,6 +12,11 @@ const LogOut = () => {
             Log Out
           </Button>
         </Link>
+        <div className="btn_link">
+          <Button variant="danger">
+            <CartIcon />
+          </Button>
+        </div>
       </div>
     </Fragment>
   );

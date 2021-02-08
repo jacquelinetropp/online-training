@@ -23,11 +23,6 @@ const navbar = ({ currentUser, hidden }) => {
             <Nav.Link href="/plan">Plans</Nav.Link>
           </Nav>
           {currentUser ? <LogOut /> : <LogIn />}
-          <div className="btn_link">
-            <Button variant="danger">
-              <CartIcon />
-            </Button>
-          </div>
         </Navbar.Collapse>
       </Navbar>
       {hidden ? null : <CartDropdown />}
