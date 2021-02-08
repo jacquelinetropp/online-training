@@ -21,7 +21,6 @@ const navbar = ({ currentUser, hidden }) => {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#link">About</Nav.Link>
             <Nav.Link href="/plan">Plans</Nav.Link>
-            <Nav.Link href="#link">Contact</Nav.Link>
           </Nav>
           {currentUser ? <LogOut /> : <LogIn />}
           <div className="btn_link">

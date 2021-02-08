@@ -7,14 +7,14 @@ import { clearItem, addItem, removeItem } from "../../redux/cart/cartActions";
 const CheckoutItem = ({ clearItem, cartItem, addItem, removeItem }) => {
   const { sessions, img, price, quantity } = cartItem;
   return (
-    <Row className="d-flex mx-3 py-3 cart justify-content-center align-items-middle checkout">
+    <Row className="d-flex mx-3 py-3 cart justify-content-center align-items-center checkout">
       <Col col-md-offset-1 md={2}>
         <Image src={img} className="checkout__img" />
       </Col>
       <Col md={2}>
         <h6>{sessions} sessions</h6>
       </Col>
-      <Col md={2} className="checkout__quantity">
+      <Col md={2} className="checkout__quantity justify-content-center">
         <div className="checkout__arrow" onClick={() => removeItem(cartItem)}>
           &#10094;
         </div>

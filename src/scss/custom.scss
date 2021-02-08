@@ -1,4 +1,11 @@
 //overrides
+
+#root {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
 $theme-colors: (
   "danger": rgb(201, 26, 0),
   "dark": rgb(64, 64, 64),
@@ -8,6 +15,10 @@ $theme-colors: (
   padding: 0px !important;
 }
 
+.row-fix {
+  width: 100%;
+  margin: 0;
+}
 .form-control:focus {
   border-color: #ff0000 !important;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
@@ -107,6 +118,7 @@ $theme-colors: (
 
 //Checkout
 .checkout {
+  border-bottom: 1px solid black;
 
   &__quantity{
     display: flex;
@@ -114,15 +126,16 @@ $theme-colors: (
 
   &__arrow {
     cursor: pointer;
-
-    .value {
-      margin: 0 10px;
-    }
   }
 
   &__img {
-  width: 100%; }
+    width: 100%;
+  max-width: 250px; }
 }
+
+ .value {
+      margin: 0 10px;
+    }
 
 //Footer
 .footer {
