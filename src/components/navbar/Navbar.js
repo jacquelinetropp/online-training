@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import LogIn from "./LogIn";
 import LogOut from "./LogOut";
 
-import CartIcon from "../../components/cartIcon/CartIcon";
 import CartDropdown from "../cartDropdown/CartDropdown";
 
 const navbar = ({ currentUser, hidden }) => {
