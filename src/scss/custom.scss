@@ -26,19 +26,28 @@ $theme-colors: (
 
 //helpers
 .clippath {
-  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% 87%, 0 100%);
 }
 
 .clippath1{
-  clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0 100%);
+  clip-path:   polygon(0 0%, 100% 20%,100% 75%,0 100%);
+
 }
 
 .margin-top-lg {
   margin-top: -5rem;
 }
 
+.margin-top-xl {
+  margin-top: -8rem;
+}
+
 .padding-y-lg {
   padding: 5rem 0 5rem 0;
+}
+
+.padding-top-lg {
+  padding-top: 5rem;
 }
 
 .padding-x-md {
@@ -72,13 +81,25 @@ $theme-colors: (
   display: flex;
 }
 //Home
+.header__img {
+  padding: 1rem;
+}
 .tricard {
+  
+    &__txt {
+      font-weight: 700;
+      text-align: center;
+      font-size: 30px;
+    }
   &_title {
     color: #c91a00;
+    font-size: 40px !important;
   }
   &_img {
-    height: 50px;
-    margin-top: 10px;
+   height: 212px;
+   &_box {
+  width: 50%;
+  margin: 0 auto; }
   }
 }
 
@@ -91,7 +112,8 @@ $theme-colors: (
   &_image {
 
     img {
-      width: 75%;
+      width: 50%;
+      max-width: 300px;
       display: block;
       margin: 0 auto;
     }

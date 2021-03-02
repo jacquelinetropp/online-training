@@ -14,13 +14,15 @@ export class Home extends Component {
   render() {
     return (
       <Container fluid className="wrapper">
-        <Row className="clippath">
+        <Row className="">
           <Col>
-            <Image src={HomeImg} fluid className="px-0 home_img" />
+          <div className="header__img">
+            <Image src={HomeImg} fluid className="px-0 home_img clippath" />
+            </div>
           </Col>
         </Row>
         <div className="my-3 ">
-          <div className="padding-y-lg  margin-top-lg">
+          <div className="padding-y-lg  margin-top-xl">
             <Info
               image={Barbell}
               title="Customized Workouts"
@@ -41,7 +43,7 @@ export class Home extends Component {
               btn="Learn More"
             />
           </div>
-          <div className="padding-y-lg margin-top-lg">
+          <div className="padding-top-lg margin-top-lg">
             <Info
               image={Desktop}
               title="One on One Coaching"

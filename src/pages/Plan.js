@@ -7,7 +7,7 @@ import * as actions from "../redux/actions";
 import Tricard from "../components/tricard/tricard";
 
 //images
-import PlanImg from "../Images/plan.jpg";
+import PlanImg from "../Images/plan2.jpg";
 import Barbell from "../Images/barbell-outline.svg";
 import Food from "../Images/fast-food-outline.svg";
 import Desktop from "../Images/desktop-outline.svg";

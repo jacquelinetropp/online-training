@@ -18,7 +18,7 @@ const navbar = ({ currentUser, hidden }) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
+          
             <Nav.Link href="/plan">Plans</Nav.Link>
           </Nav>
           {currentUser ? <LogOut /> : <LogIn />}
