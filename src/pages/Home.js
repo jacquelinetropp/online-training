@@ -14,10 +14,27 @@ export class Home extends Component {
   render() {
     return (
       <Container fluid className="wrapper">
-        <Row className="">
+        <Row className="header">
           <Col>
-          <div className="header__img">
-            <Image src={HomeImg} fluid className="px-0 home_img clippath" />
+            <div className="header__img">
+              <Image src={HomeImg} fluid className="px-0 home_img clippath" />
+            </div>
+            <div className="header__text">
+              <div className="header__1">
+               
+              </div>
+              <div className="header__2">
+                <div className="header__box">
+                 <div className="text-center">
+                  <h1 className="header__header">FuncMove</h1>
+                  <h4 className="header__description">No More Pain</h4>
+                </div>
+                  <h6>Our Mission</h6>
+                  <p>Society sit more than we should which leads to musculo-skeletal imbalances that cause back pain and other daily aches and pains.
+                  You don't need to succumb to this cycle of pain. We are dedicated to helping you move better and feel better using movement our 
+                  body was designed to do. </p> 
+                </div>
+              </div>
             </div>
           </Col>
         </Row>

@@ -13,7 +13,7 @@ const navbar = ({ currentUser, hidden }) => {
   return (
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">Personal Training</Navbar.Brand>
+        <Navbar.Brand href="/">FuncMove</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">

@@ -8,6 +8,11 @@ import CartIcon from "../../components/cartIcon/CartIcon";
 const LogOut = () => {
   return (
     <div className="logout">
+    <div className="btn_link">
+        <Button variant="danger">
+          <CartIcon />
+        </Button>
+      </div>
       <div className="btn_link">
         <Link to="/signup">
           <Button variant="outline-danger" onClick={() => auth.signOut()}>
@@ -15,11 +20,7 @@ const LogOut = () => {
           </Button>
         </Link>
       </div>
-      <div className="btn_link">
-        <Button variant="danger">
-          <CartIcon />
-        </Button>
-      </div>
+      
     </div>
   );
 };

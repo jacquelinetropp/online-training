@@ -7,7 +7,7 @@ import * as actions from "../redux/actions";
 import Tricard from "../components/tricard/tricard";
 
 //images
-import PlanImg from "../Images/plan2.jpg";
+import PlanImg from "../Images/plan3.jpg";
 import Barbell from "../Images/barbell-outline.svg";
 import Food from "../Images/fast-food-outline.svg";
 import Desktop from "../Images/desktop-outline.svg";
@@ -36,8 +36,8 @@ const Plan = ({ getPlans, plans, loading }) => {
   return (
     <Container fluid className="wrapper">
       <Row>
-        <Col>
-          <Image src={PlanImg} fluid className="px-0 home_img" />
+        <Col className="plan__header">
+          <h1 className="text-center" id="plan__txt">Find Your Plan</h1>
         </Col>
       </Row>
       <Row className="mx-auto my-3">{content}</Row>
