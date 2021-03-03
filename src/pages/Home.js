@@ -27,7 +27,7 @@ export class Home extends Component {
                 <div className="header__box">
                  <div className="text-center">
                   <h1 className="header__header">FuncMove</h1>
-                  <h4 className="header__description">No More Pain</h4>
+                  <h4 className="header__description">Functional Movement Done Right</h4>
                 </div>
                   <h6>Our Mission</h6>
                   <p>Society sit more than we should which leads to musculo-skeletal imbalances that cause back pain and other daily aches and pains.
