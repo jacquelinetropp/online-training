@@ -29,10 +29,12 @@ export class Home extends Component {
                   <h1 className="header__header">FuncMove</h1>
                   <h4 className="header__description">Functional Movement Done Right</h4>
                 </div>
+                <div className="header__mission">
                   <h6>Our Mission</h6>
                   <p>Society sit more than we should which leads to musculo-skeletal imbalances that cause back pain and other daily aches and pains.
                   You don't need to succumb to this cycle of pain. We are dedicated to helping you move better and feel better using movement our 
                   body was designed to do. </p> 
+                  </div>
                 </div>
               </div>
             </div>

@@ -44,6 +44,9 @@ $theme-colors: (
 
 .padding-y-lg {
   padding: 5rem 0 5rem 0;
+  @media screen and (max-width: 940px) {
+     padding: 6rem 0 6.5rem 0;
+  }
 }
 
 .padding-top-lg {
@@ -90,24 +93,52 @@ $theme-colors: (
 
   &__text {
     position: absolute;
-    top: 40%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    @media screen and (max-width: 940px) {
+         grid-template-columns: repeat(1, 1fr);
+  }
   }
 &__header {
-font-size: 65px;
+  font-size: 65px;
     color: #c91a00;
     -webkit-text-stroke: 4px #404040;
     font-weight: 700;
     letter-spacing: 2px;
+  @media screen and (max-width: 940px) {
+      font-size: 55px;
+       -webkit-text-stroke: 2px #404040;
+  }
+  @media screen and (max-width: 425px) {
+      font-size: 45px;
+       -webkit-text-stroke: 2px #404040;
+  }
+}
+
+&__description {
+  @media screen and (max-width: 425px) {
+      font-size: 20px !important;
+  }
 }
 &__2 {
  background-color: rgba(225,225,225,.8);
     padding: 2rem;
     border-radius: 10px;
+
+     @media screen and (max-width: 425px) {
+    padding: .5rem;
+  }
+}
+
+&__mission {
+  @media screen and (max-width: 940px) {
+    display: none;
+  }
 }
 &__img {
   padding: 1rem;
@@ -146,6 +177,11 @@ font-size: 65px;
       max-width: 300px;
       display: block;
       margin: 0 auto;
+    
+    @media screen and (max-width: 770px) {
+       width: 40%;
+  }
+      
     }
 
   }
