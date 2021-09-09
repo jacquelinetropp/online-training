@@ -30,6 +30,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         displayName,
         email,
         createdAt,
+        sessions: 0,
         ...additionalData,
       });
     } catch (error) {

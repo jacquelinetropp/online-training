@@ -90,7 +90,7 @@ class SignupUser extends React.Component {
             label="Confirm Password"
             required
           />
-          <Button type="submit">SIGN UP</Button>
+          <Button variant="danger" type="submit">SIGN UP</Button>
         </form>
       </div>
     );

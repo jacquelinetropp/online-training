@@ -1,7 +1,10 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
+import {connect} from 'react-redux';
+import { Button } from "react-bootstrap";
+import {addPlan} from '../../redux/user/userActions';
 
-const StripeButton = ({ price }) => {
+const StripeButton = ({ price, cartItem }) => {
   const priceForStripe = price * 100;
   const publishableKey = "pk_test_rrFgcrDPIffSU3GW4LJwWMgK00wvUvACZn";
   const onToken = (token) => {
@@ -20,10 +23,21 @@ const StripeButton = ({ price }) => {
         amount={priceForStripe}
         panelLabel="Pay Now"
         token={onToken}
-        stripeKey={publishableKey}
-      />
+        stripeKey={publishableKey}>
+          <Button onClick={addPlan(cartItem)}>Testing</Button>
+        </StripeCheckout>
     </div>
   );
 };
 
-export default StripeButton;
+const mapStateToProps = ({cart}) => ({
+    cartItem: cart.cartItems
+})
+
+const mapDispatchToProps = dispatch => ({
+  addPlan: cartItem => dispatch(addPlan(cartItem))
+  
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(StripeButton);

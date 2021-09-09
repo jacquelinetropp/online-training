@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 
 import FormInput from "../form-input/formInput";
-import { auth, signInWithGoogle } from "../../firebase/firebase";
+import { auth } from "../../firebase/firebase";
 
 class LoginUser extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class LoginUser extends Component {
             required
           />
           <div className="buttons">
-            <Button type="submit"> Sign in </Button>
+            <Button variant= "danger" type="submit"> Sign in </Button>
           </div>
         </form>
       </div>

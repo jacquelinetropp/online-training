@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 //Redux
 import { connect } from "react-redux";
@@ -58,8 +58,14 @@ class App extends React.Component {
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
+          <Route path="/login"
+          render={() =>
+            this.props.currentUser ? <Redirect to="/" /> : <Login />
+          } />
+          <Route path="/signup"
+          render={() =>
+            this.props.currentUser ? <Redirect to="/" /> : <Signup />
+          }  />
           <Route path="/plan" component={Plan} />
           <Route path="/checkout" component={Checkout} />
         </Switch>
