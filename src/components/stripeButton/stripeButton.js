@@ -24,7 +24,6 @@ const StripeButton = ({ price, cartItem }) => {
         panelLabel="Pay Now"
         token={onToken}
         stripeKey={publishableKey}>
-          <Button onClick={addPlan(cartItem)}>Testing</Button>
         </StripeCheckout>
     </div>
   );
