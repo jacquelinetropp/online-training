@@ -7935,6 +7935,11 @@ no-case@^3.0.3:
     lower-case "^2.0.1"
     tslib "^1.10.0"
 
+node-bin-setup@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/node-bin-setup/-/node-bin-setup-1.1.0.tgz#9df94c41335a8f41958a639b2736f860582a209c"
+  integrity sha512-pTeU6NgUrexiLNtd+AKwvg6cngHMvj5FZ5e2bbv2ogBSIc9yhkXSSaTScfSRZnwHIh5YFmYSYlemLWkiKD7rog==
+
 node-fetch@2.6.1, node-fetch@^2.3.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
@@ -8055,6 +8060,13 @@ node-sass@4.14:
     sass-graph "2.2.5"
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
+
+node@^18.7.0:
+  version "18.7.0"
+  resolved "https://registry.yarnpkg.com/node/-/node-18.7.0.tgz#7b1b5204485285c15703264b469920ef658f62e4"
+  integrity sha512-h5wBtW3jnRfJzAfKldQ3lp9V8EOmbS9EHg00nUlUWWVeMtX8NGyaYB3L+AnPAGNjgWSPPDHcsqJAwlysyGiZ0g==
+  dependencies:
+    node-bin-setup "^1.0.0"
 
 "nopt@2 || 3":
   version "3.0.6"
