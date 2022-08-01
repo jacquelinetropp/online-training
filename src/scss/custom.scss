@@ -9,6 +9,7 @@
 $theme-colors: (
   "danger": rgb(201, 26, 0),
   "dark": rgb(64, 64, 64),
+  "info": rgb(0,0,0)
 );
 
 .col {
@@ -22,6 +23,10 @@ $theme-colors: (
 .form-control:focus {
   border-color: #ff0000 !important;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+}
+
+h1, h2, h3, h4, h5, h6, .brandFont {
+  font-family: 'Edu NSW ACT Foundation', cursive;
 }
 
 //helpers
@@ -75,6 +80,13 @@ $theme-colors: (
   display: flex;
 }
 
+.absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 //navbar
 .btn_link {
   padding: 0 3px;
@@ -89,34 +101,34 @@ $theme-colors: (
 }
 //Home
 .header {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/home2.jpg');
+  background-position: center;
+  background-size: cover;
 
-  &__text {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  &__text {    
     width: 80%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    @media screen and (max-width: 940px) {
-         grid-template-columns: repeat(1, 1fr);
+    margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
-  }
-&__header {
+  
+  &__header {
   font-size: 65px;
-    color: #c91a00;
-    -webkit-text-stroke: 4px #404040;
-    font-weight: 700;
-    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 3px;
+    justify-content: center;
   @media screen and (max-width: 940px) {
       font-size: 55px;
-       -webkit-text-stroke: 2px #404040;
   }
   @media screen and (max-width: 425px) {
       font-size: 45px;
-       -webkit-text-stroke: 2px #404040;
   }
 }
 
@@ -125,24 +137,50 @@ $theme-colors: (
       font-size: 20px !important;
   }
 }
-&__2 {
- background-color: rgba(225,225,225,.8);
-    padding: 2rem;
-    border-radius: 10px;
-
-     @media screen and (max-width: 425px) {
-    padding: .5rem;
-  }
-}
 
 &__mission {
-  @media screen and (max-width: 940px) {
-    display: none;
+  background: linear-gradient(rgba(247,0,37,0.5), rgba(247,0,56,37.5));
+  justify-self: flex-end;
+  color: white;
+  
+  &__text {
+    width: 75%;
+    margin: 0 auto;
+    padding: 1rem;
   }
+
 }
 &__img {
   padding: 1rem;
 }
+}
+
+.imageCard {
+    // width: 75%;
+    // margin: 0 auto;
+}
+
+.overlay {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.overlayRed {
+  background: linear-gradient(rgba(247,0,37,0.3), rgba(247,0,56,37.3));
+}
+
+//Highlight 
+
+.highlight {
+  background-image: url('/gradient.png');
+  background-size: cover;
+
+  &__img {
+    height: 250px;
+  }
+
 }
 
 .tricard {
