@@ -78,19 +78,19 @@ export class Home extends Component {
         </Row>
         <Row className="pb-5 justify-content-center bg-info">
           <Col sm={12} md={3} className="p-2">
-            <Link to="/gettingStarted">
+            <Link to="/">
               <ImageCard title="GETTING STARTED" image={Started} red />
             </Link>
           </Col>
 
           <Col sm={12} md={3} className="p-2">
-            <Link to="/trainers">
+            <Link to="/">
               <ImageCard title="OUR TRAINERS" image={Trainers} red />
             </Link>
           </Col>
 
           <Col sm={12} md={3} className="p-2">
-            <Link to="/about">
+            <Link to="/">
               <ImageCard title="ABOUT US" image={AboutUs} red />
             </Link>
           </Col>
